@@ -7,13 +7,25 @@ We hope you find exactly what you're looking for in a place to stay.
   <!-- <button {{action 'announcementShow'}}>Show Announcements</button> -->
 <br>
 <div class="for_rent">
+  <ul>
+    {{#each model.rentals as |rental|}}
+       {{rental-tile rental=rental}}
+    {{/each}}
+  </ul>
+</div>
+{{new-rental save2="save3"}}
+
+<h2> Cities </h2>
+
+<div class="for_rent">
 <ul>
-  {{#each model as |rental|}}
-    {{rental-tile rental=rental destroyRental="destroyRental"}}
+  {{#each model.cities as |city|}}
+    <li>{{city.name}}</li>
   {{/each}}
 </ul>
 </div>
-{{new-rental save2="save3"}}
+{{new-city saveTwo="saveThree"}}
+<hr>
 
 {{#link-to 'about'}}About{{/link-to}}
 {{#link-to 'contact'}}Click here to contact us.{{/link-to}}

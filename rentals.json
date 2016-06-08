@@ -18,6 +18,14 @@
     "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Wheeldon_Apartment_Building_-_Portland_Oregon.jpg"
   }],
 
+  "cities": [{
+    "name": "Portland",
+    "country": "USA"
+  }, {
+    "name": "Seattle",
+    "country": "USA"
+  }],
+
   "announcements": [{
     "title": "Welcome",
     "info": "This is the first announcement."},
