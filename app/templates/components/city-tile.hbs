@@ -2,7 +2,8 @@
 <ul>
   {{#each city.rentals as |rental|}}
   <li>{{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}}{{/link-to}}</li>
-    <!-- {{city-tile city=city destroyCity="destroyRental"}} -->
   {{/each}}
 </ul>
+
+<button {{action 'destroyCity' city}}>Delete</button>
 </div>
