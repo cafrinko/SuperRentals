@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model(params) {
     return this.store.findRecord('city', params.city_id);
-  }
+  },
     actions: {
       save3(params) {
         // Create a new rental with the information from our parameters, save it to the database, and call it "newRental".
@@ -19,6 +19,16 @@ export default Ember.Route.extend({
         });
         // Afterwards, take us to the page displaying details for "city".
         this.transitionTo('city', params.city);
+      },
+
+      destroyCity(city) {
+        var rental_deletions = city.get('rentals').map(function(rental) {
+          return rental.destroyRecord();
+        });
+        Ember.RSVP.all(rental_deletions).then(function() {
+          return city.destroyRecord();
+        });
+        this.transitionTo('index');
       }
     }
 });
