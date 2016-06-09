@@ -19,8 +19,8 @@ We hope you find exactly what you're looking for in a place to stay.
 <div class="for_rent">
 <ul>
   {{#each model.cities as |city|}}
-    <li>{{#link-to 'city' city.id}}{{city.name}}{{/link-to}}</li>
-    {{city-tile city=city}}
+  <li>{{#link-to 'city' city.id}}{{city.name}}{{/link-to}}</li>
+    <!-- {{city-tile city=city destroyCity="destroyRental"}} -->
   {{/each}}
 </ul>
 </div>
