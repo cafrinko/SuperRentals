@@ -4,8 +4,8 @@ Rentals available in {{city.name}}:
 
 <div class="for_rent">
 <ul>
-  {{#each city.rentals as |rental|}}
-  <li>{{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}}{{/link-to}}</li>
+  {{#each sortedRentals as |rental|}}
+  <li>{{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}} is {{rental.cost}} per night{{/link-to}}</li>
   {{/each}}
 </ul>
 
